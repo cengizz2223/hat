@@ -11,11 +11,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="tr">
       <head>
+        {/* Inter – body text */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        {/* Satoshi – headings (same as Framer site) */}
+        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
       </head>
-      <body style={{ fontFamily: "'Inter', sans-serif" }}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
