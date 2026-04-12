@@ -15,21 +15,43 @@ function Card({ hov, idx, setHov, showLabel, style }: {
 }) {
   const active = hov === idx
   return (
+    /* Perspective wrapper — gives the canvas-tilt effect */
     <div
       onMouseEnter={() => setHov(idx)}
       onMouseLeave={() => setHov(-1)}
-      style={{ borderRadius: '8px', overflow: 'hidden', cursor: 'pointer', background: '#fff', position: 'relative', ...style }}
+      style={{
+        perspective: '800px',
+        cursor: 'pointer',
+        position: 'relative',
+        ...style,
+      }}
     >
-      <img
-        src={CARD_IMGS[idx]} alt=""
-        style={{
-          width: '100%', height: '100%',
-          objectFit: 'contain', objectPosition: 'center', display: 'block',
-          transition: 'transform 0.5s ease, filter 0.4s ease',
-          transform: active ? 'scale(1.04)' : 'scale(1)',
-          filter: active ? 'grayscale(0%)' : 'grayscale(100%)',
-        }}
-      />
+      {/* The tilted canvas frame */}
+      <div style={{
+        width: '100%',
+        height: '100%',
+        borderRadius: '6px',
+        overflow: 'hidden',
+        background: '#f5f5f5',
+        boxShadow: active
+          ? '8px 16px 40px rgba(0,0,0,0.55), 2px 4px 8px rgba(0,0,0,0.3)'
+          : '6px 12px 30px rgba(0,0,0,0.45), 2px 3px 6px rgba(0,0,0,0.25)',
+        transform: active
+          ? 'rotateY(-4deg) rotateX(2deg) scale(1.03)'
+          : 'rotateY(-6deg) rotateX(3deg)',
+        transformStyle: 'preserve-3d',
+        transition: 'transform 0.45s ease, box-shadow 0.45s ease',
+      }}>
+        <img
+          src={CARD_IMGS[idx]} alt=""
+          style={{
+            width: '100%', height: '100%',
+            objectFit: 'cover', objectPosition: 'center', display: 'block',
+            transition: 'filter 0.4s ease',
+            filter: active ? 'grayscale(0%)' : 'grayscale(100%)',
+          }}
+        />
+      </div>
       {showLabel && (
         <a href="#" style={{
           position: 'absolute', bottom: '12px', right: '12px',
