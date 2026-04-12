@@ -72,27 +72,26 @@ export default function Projects() {
       */}
       <div style={{ paddingTop: `${RISE}px` }}>
         {/* ROW 1 */}
-        <div style={{ display:'grid', gridTemplateColumns:`1fr 1fr 1fr`, gap:`${GAP}px`, marginBottom:`${GAP}px`, alignItems:'flex-end' }}>
-          {/* Left top */}
+        <div style={{ display:'grid', gridTemplateColumns:`1fr 1fr 1fr`, gap:`${GAP}px`, marginBottom:`${GAP}px` }}>
           <Card hov={hov} idx={0} setHov={setHov} style={{ height:`${BASE}px` }} />
+          <Card hov={hov} idx={1} setHov={setHov} style={{ height:`${BASE}px` }} />
+          <Card hov={hov} idx={2} setHov={setHov} style={{ height:`${BASE}px` }} />
+        </div>
 
-          {/* CENTER TOP — bigger, rises above via negative marginTop */}
-          <Card hov={hov} idx={1} setHov={setHov} style={{
+        {/* ROW 2 — center card rises above */}
+        <div style={{ display:'grid', gridTemplateColumns:`1fr 1fr 1fr`, gap:`${GAP}px`, marginBottom:`${GAP}px`, alignItems:'center' }}>
+          <Card hov={hov} idx={3} setHov={setHov} style={{ height:`${BASE}px` }} />
+
+          {/* CENTER — bigger, rises above */}
+          <Card hov={hov} idx={4} setHov={setHov} style={{
             height:`${BIG}px`,
             marginTop: `-${RISE}px`,
+            marginBottom: `-${RISE}px`,
             zIndex: 3,
             boxShadow: '0 20px 60px rgba(0,0,0,0.7)',
             position: 'relative',
           }} />
 
-          {/* Right top */}
-          <Card hov={hov} idx={2} setHov={setHov} style={{ height:`${BASE}px` }} />
-        </div>
-
-        {/* ROW 2 */}
-        <div style={{ display:'grid', gridTemplateColumns:`1fr 1fr 1fr`, gap:`${GAP}px`, marginBottom:`${GAP}px` }}>
-          <Card hov={hov} idx={3} setHov={setHov} style={{ height:`${BASE}px` }} />
-          <Card hov={hov} idx={4} setHov={setHov} style={{ height:`${BASE}px` }} />
           <Card hov={hov} idx={5} setHov={setHov} style={{ height:`${BASE}px` }} />
         </div>
 
