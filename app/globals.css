@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+@keyframes marqueeAnim { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.animate-marquee      { animation: marqueeAnim 22s linear infinite; }
+.animate-marquee-slow { animation: marqueeAnim 30s linear infinite; }
+
+@keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.tc-track { display: flex; gap: 16px; width: max-content; animation: scrollLeft 32s linear infinite; }
+.tc-fade-left  { position: absolute; top: 0; left: 0; bottom: 0; width: 180px; background: linear-gradient(to right, #000, transparent); pointer-events: none; z-index: 2; }
+.tc-fade-right { position: absolute; top: 0; right: 0; bottom: 0; width: 180px; background: linear-gradient(to left, #000, transparent); pointer-events: none; z-index: 2; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
