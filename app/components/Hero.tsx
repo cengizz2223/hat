@@ -25,11 +25,11 @@ export default function Hero() {
           Osmanlı Hat Sanatının İzinde
         </div>
 
-        <h1 style={{ fontSize:'clamp(52px,8vw,96px)', fontWeight:600, color:'#fff', lineHeight:1.05, letterSpacing:'-3px', marginBottom:'24px' }}>
+        <h1 style={{ fontSize:'92px', fontWeight:400, color:'#fff', lineHeight:1, letterSpacing:'-2px', marginBottom:'24px' }}>
           Türk Hat Sanatı
         </h1>
 
-        <p style={{ fontSize:'15px', color:'rgba(255,255,255,0.55)', maxWidth:'420px', marginBottom:'40px', lineHeight:1.75, fontWeight:300 }}>
+        <p style={{ fontSize:'15px', color:'rgba(255,255,255,0.65)', maxWidth:'420px', marginBottom:'40px', lineHeight:1.5, letterSpacing:'-0.3px', fontWeight:400 }}>
           Osmanlı medeniyetinin en köklü sanatlarından biri olan hat sanatı, yüzyıllar boyunca nesiller aktarılmış ve İslam kültürünün ayrılmaz bir parçası hâline gelmiştir.
         </p>
 
