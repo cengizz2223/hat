@@ -23,7 +23,7 @@ function Card({ hov, idx, setHov, showLabel, style }: {
         cursor: 'pointer',
         position: 'relative',
         transition: 'opacity 0.3s ease',
-        opacity: active ? 1 : 0.9,
+        opacity: active ? 1 : 0.85,
         ...style,
       }}
     >
@@ -32,17 +32,20 @@ function Card({ hov, idx, setHov, showLabel, style }: {
         style={{
           width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: 'center', display: 'block',
+          transition: 'transform 0.4s ease',
+          transform: active ? 'scale(1.02)' : 'scale(1)',
         }}
       />
       {showLabel && (
         <a href="#" style={{
-          position: 'absolute', bottom: '12px', right: '12px',
-          padding: '6px 14px', borderRadius: '100px',
-          background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(6px)',
-          color: '#fff', fontSize: '15px', textDecoration: 'none',
+          position: 'absolute', bottom: '12px', left: '50%', transform: 'translateX(-50%)',
+          padding: '8px 20px', borderRadius: '100px',
+          background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255,255,255,0.2)',
+          color: '#fff', fontSize: '14px', textDecoration: 'none', whiteSpace: 'nowrap',
           opacity: active ? 1 : 0, transition: 'opacity 0.3s ease',
         }}>
-          View Casestudy
+          View Casestudy ↗
         </a>
       )}
     </div>
@@ -85,10 +88,10 @@ export default function Projects() {
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '48px' }}>
-        <a href="#" style={{ padding: '13px 24px', borderRadius: '100px', background: 'transparent', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', fontSize: '18px', fontWeight: 400, textDecoration: 'none' }}>
+        <a href="#" style={{ padding: '13px 24px', borderRadius: '100px', background: 'transparent', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', fontSize: '15px', fontWeight: 400, textDecoration: 'none' }}>
           All Projects
         </a>
-        <a href="mailto:hello@framebase.design" style={{ padding: '13px 24px', borderRadius: '100px', background: '#fff', color: '#000', fontSize: '18px', fontWeight: 400, textDecoration: 'none' }}>
+        <a href="mailto:hello@framebase.design" style={{ padding: '13px 24px', borderRadius: '100px', background: '#fff', color: '#000', fontSize: '15px', fontWeight: 400, textDecoration: 'none' }}>
           Book a Free Call
         </a>
       </div>

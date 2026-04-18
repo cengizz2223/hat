@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         {/* Title */}
-        <h1 style={{ fontSize: '92px', fontWeight: 400, color: '#fff', lineHeight: 1, letterSpacing: '-2px', marginBottom: '24px', fontFamily: "'Satoshi', sans-serif" }}>
+        <h1 style={{ fontSize: 'clamp(56px, 8vw, 92px)', fontWeight: 400, color: '#fff', lineHeight: 1, letterSpacing: '-2px', marginBottom: '24px', fontFamily: "'Satoshi', sans-serif" }}>
           Türk Hat Sanatı
         </h1>
 
@@ -40,12 +40,16 @@ export default function Hero() {
           Osmanlı medeniyetinin en köklü sanatlarından biri olan hat sanatı, yüzyıllar boyunca nesiller aktarılmış ve İslam kültürünün ayrılmaz bir parçası hâline gelmiştir.
         </p>
 
-        {/* Buttons */}
+        {/* Buttons — both outline style like Framer */}
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <Link href="#services" style={{ padding: '13px 24px', borderRadius: '100px', background: '#fff', color: '#000', fontSize: '15px', fontWeight: 400, textDecoration: 'none' }}>
+          <Link href="#services"
+            style={{ padding: '13px 24px', borderRadius: '10px', background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', fontSize: '18px', fontWeight: 400, textDecoration: 'none', backdropFilter: 'blur(4px)' }}
+          >
             Hat Sanatı Nedir?
           </Link>
-          <Link href="#projects" style={{ padding: '13px 24px', borderRadius: '100px', background: 'transparent', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', fontSize: '15px', fontWeight: 400, textDecoration: 'none' }}>
+          <Link href="#projects"
+            style={{ padding: '13px 24px', borderRadius: '10px', background: 'rgba(0,0,0,0.85)', border: '1px solid rgba(255,255,255,0.25)', color: '#fff', fontSize: '18px', fontWeight: 400, textDecoration: 'none', backdropFilter: 'blur(4px)' }}
+          >
             Eserleri Keşfet
           </Link>
         </div>
